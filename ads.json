@@ -1,5 +1,5 @@
 {
-  "enabled": true,
-  "text": "تبلیغ ویژه امروز 🎁",
-  "image": "https://example.com/ad.jpg"
+  "فعال": true,
+  "متن": "🎁 تبلیغ ویژه امروز",
+  "تصویر": "https://example.com/ad.jpg"
 }
