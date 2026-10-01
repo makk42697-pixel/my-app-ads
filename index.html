@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=no,
+      viewport-fit=cover">
+
+<meta name="theme-color" content="#020207">
+
+<meta name="description"
+      content="A 🩵 M">
+
+<title>A 🩵 M</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    min-height:100%;
+    overflow:hidden;
+}
+
+body{
+    background:#020207;
+    color:#fff;
+    font-family:Georgia,serif;
+    position:fixed;
+    inset:0;
+    user-select:none;
+    -webkit-user-select:none;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background{
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 50% 52%,
+            #21083d 0%,
+            #0b061b 30%,
+            #04030c 65%,
+            #000 100%
+        );
+}
+
+
+/* =====================================================
+   CENTRAL LIGHT
+===================================================== */
+
+.glow{
+    position:absolute;
+
+    width:min(430px,100vw);
+    height:min(430px,100vw);
+
+    left:50%;
+    top:53%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,220,255,.30) 0%,
+            rgba(120,40,255,.18) 35%,
+            rgba(255,0,180,.08) 55%,
+            transparent 72%
+        );
+
+    filter:blur(28px);
+}
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+#particles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:2;
+}
+
+.particle{
+    position:absolute;
+    bottom:-20px;
+
+    border-radius:50%;
+
+    background:#ff4bd8;
+
+    box-shadow:
+        0 0 6px #ff4bd8,
+        0 0 14px #ff4bd8;
+
+    animation:
+        rise linear infinite;
+}
+
+@keyframes rise{
+
+    0%{
+        transform:
+            translate3d(0,0,0)
+            scale(.7);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:.9;
+    }
+
+    50%{
+        transform:
+            translate3d(40px,-55vh,0)
+            scale(1);
+    }
+
+    85%{
+        opacity:.75;
+    }
+
+    100%{
+        transform:
+            translate3d(80px,-115vh,0)
+            scale(.6);
+
+        opacity:0;
+    }
+}
+
+
+/* =====================================================
+   RINGS
+===================================================== */
+
+.rings{
+    position:absolute;
+
+    left:50%;
+    top:53%;
+
+    width:min(420px,100vw);
+    height:min(300px,72vw);
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-5deg);
+
+    z-index:4;
+}
+
+.ring{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border:
+        1px solid
+        rgba(255,70,220,.22);
+
+    border-radius:50%;
+}
+
+.ring1{width:120px;height:80px;}
+.ring2{width:160px;height:110px;}
+.ring3{width:200px;height:140px;}
+.ring4{width:240px;height:170px;}
+.ring5{width:280px;height:200px;}
+.ring6{width:320px;height:230px;}
+.ring7{width:360px;height:260px;}
+.ring8{width:400px;height:290px;}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main{
+    position:absolute;
+
+    left:50%;
+    top:53%;
+
+    transform:translate(-50%,-50%);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    z-index:10;
+
+    white-space:nowrap;
+}
+
+
+/* =====================================================
+   A
+===================================================== */
+
+.a{
+    position:relative;
+
+    font-size:
+        clamp(75px,20vw,125px);
+
+    font-weight:bold;
+    font-style:italic;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 15px #fff,
+        0 0 30px #b88aff,
+        0 0 55px #783cff;
+}
+
+
+/* =====================================================
+   HAT
+===================================================== */
+
+.hat{
+    position:absolute;
+
+    width:65px;
+    height:34px;
+
+    left:50%;
+    top:-34px;
+
+    transform:
+        translateX(-50%)
+        rotate(-7deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #41455e,
+            #111321
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.7);
+
+    border-radius:
+        45px 45px 8px 8px;
+
+    box-shadow:
+        0 0 15px
+        rgba(130,90,255,.7);
+}
+
+.hat:after{
+    content:"";
+
+    position:absolute;
+
+    width:82px;
+    height:12px;
+
+    left:50%;
+    bottom:-7px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:#20243a;
+
+    border:
+        1px solid
+        rgba(255,255,255,.6);
+}
+
+
+/* =====================================================
+   HEART
+===================================================== */
+
+.heart{
+    display:block;
+
+    margin:
+        0 clamp(8px,3vw,14px);
+
+    font-family:Arial,sans-serif;
+
+    font-size:
+        clamp(55px,15vw,95px);
+
+    filter:
+        drop-shadow(0 0 7px #00ffff)
+        drop-shadow(0 0 18px #00d9ff)
+        drop-shadow(0 0 40px #008cff);
+
+    animation:
+        heart 1.8s ease-in-out infinite;
+}
+
+@keyframes heart{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+
+/* =====================================================
+   M
+===================================================== */
+
+.m{
+    font-size:
+        clamp(75px,20vw,125px);
+
+    font-weight:bold;
+    font-style:italic;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 15px #fff,
+        0 0 30px #ff76df,
+        0 0 55px #ff16c8;
+}
+
+
+/* =====================================================
+   SECRET DOT
+===================================================== */
+
+.secret{
+    position:absolute;
+
+    left:50%;
+    top:calc(53% + 145px);
+
+    transform:translateX(-50%);
+
+    z-index:20;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+.bracket{
+    font-size:
+        clamp(50px,13vw,80px);
+
+    color:#fff;
+
+    text-shadow:
+        0 0 8px #fff,
+        0 0 20px #ff55dd;
+}
+
+.dot{
+    font-family:Arial,sans-serif;
+
+    font-size:
+        clamp(70px,18vw,110px);
+
+    font-weight:bold;
+
+    margin:
+        0 12px;
+
+    color:#ff55dd;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 12px #ff55dd,
+        0 0 30px #ff00cc;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .rings{
+        width:400px;
+        height:285px;
+    }
+
+    .main{
+        top:53%;
+    }
+
+    .secret{
+        top:calc(53% + 140px);
+    }
+
+}
+
+
+/* =====================================================
+   SHORT SCREEN
+===================================================== */
+
+@media(max-height:700px){
+
+    .main{
+        top:50%;
+    }
+
+    .rings{
+        top:50%;
+    }
+
+    .glow{
+        top:50%;
+    }
+
+    .secret{
+        top:calc(50% + 135px);
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media(max-width:360px){
+
+    .main{
+        transform:
+            translate(-50%,-50%)
+            scale(.88);
+    }
+
+    .rings{
+        transform:
+            translate(-50%,-50%)
+            rotate(-5deg)
+            scale(.88);
+    }
+
+    .secret{
+        transform:
+            translateX(-50%)
+            scale(.88);
+    }
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    .heart{
+        animation:none;
+    }
+
+    .particle{
+        animation:none;
+        display:none;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<div class="background"></div>
+
+
+<!-- =====================================================
+     CENTRAL GLOW
+===================================================== -->
+
+<div class="glow"></div>
+
+
+<!-- =====================================================
+     PARTICLES
+===================================================== -->
+
+<div id="particles"></div>
+
+
+<!-- =====================================================
+     RINGS
+===================================================== -->
+
+<div class="rings">
+
+    <div class="ring ring1"></div>
+    <div class="ring ring2"></div>
+    <div class="ring ring3"></div>
+    <div class="ring ring4"></div>
+    <div class="ring ring5"></div>
+    <div class="ring ring6"></div>
+    <div class="ring ring7"></div>
+    <div class="ring ring8"></div>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN LOGO
+===================================================== -->
+
+<div class="main">
+
+    <div class="a">
+
+        <div class="hat"></div>
+
+        A
+
+    </div>
+
+
+    <div class="heart">
+        🩵
+    </div>
+
+
+    <div class="m">
+        M
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SECRET
+===================================================== -->
+
+<div class="secret">
+
+    <div class="bracket">
+        (
+    </div>
+
+    <div class="dot">
+        •
+    </div>
+
+    <div class="bracket">
+        )
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   PARTICLE SYSTEM
+===================================================== */
+
+const box =
+    document.getElementById("particles");
+
+
+/*
+   تعداد ذرات بر اساس قدرت تقریبی دستگاه
+   برای موبایل سبک‌تر نگه داشته شده
+*/
+
+const isMobile =
+    window.innerWidth <= 600;
+
+const particleCount =
+    isMobile ? 90 : 130;
+
+
+for(let i = 0; i < particleCount; i++){
+
+    const p =
+        document.createElement("div");
+
+    p.className =
+        "particle";
+
+
+    const size =
+        Math.random() * 4 + 2;
+
+
+    p.style.width =
+        size + "px";
+
+    p.style.height =
+        size + "px";
+
+
+    p.style.left =
+        Math.random() * 100 + "%";
+
+
+    p.style.animationDuration =
+        (6 + Math.random() * 9) + "s";
+
+
+    p.style.animationDelay =
+        (-Math.random() * 15) + "s";
+
+
+    box.appendChild(p);
+
+}
+
+
+/* =====================================================
+   PREVENT ACCIDENTAL ZOOM
+===================================================== */
+
+document.addEventListener(
+    "gesturestart",
+    function(e){
+        e.preventDefault();
+    }
+);
+
+
+/* =====================================================
+   KEEP PAGE AT TOP
+===================================================== */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        window.scrollTo(0,0);
+
+    }
+);
+
+</script>
+
+</body>
+</html>
